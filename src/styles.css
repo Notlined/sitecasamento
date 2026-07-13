@@ -1,0 +1,128 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Wedding editorial design system — soft lavender + cream ivory */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-lavender: var(--lavender);
+  --color-lavender-deep: var(--lavender-deep);
+  --color-lavender-soft: var(--lavender-soft);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-serif-italic: "Cormorant Garamond", serif;
+  --font-sans: "Jost", sans-serif;
+  --font-mono: "Jost", sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --cream: oklch(0.98 0.01 300);
+  --lavender-soft: oklch(0.92 0.04 300);
+  --lavender: oklch(0.72 0.10 300);
+  --lavender-deep: oklch(0.48 0.12 300);
+  --ink: oklch(0.28 0.04 300);
+
+  --background: oklch(0.98 0.01 300);
+  --foreground: oklch(0.28 0.04 300);
+  --card: oklch(0.96 0.02 300);
+  --card-foreground: oklch(0.28 0.04 300);
+  --popover: oklch(0.98 0.01 300);
+  --popover-foreground: oklch(0.28 0.04 300);
+  --primary: oklch(0.48 0.12 300);
+  --primary-foreground: oklch(0.98 0.01 300);
+  --secondary: oklch(0.92 0.04 300);
+  --secondary-foreground: oklch(0.28 0.04 300);
+  --muted: oklch(0.94 0.02 300);
+  --muted-foreground: oklch(0.50 0.03 300);
+  --accent: oklch(0.72 0.10 300);
+  --accent-foreground: oklch(0.98 0.01 300);
+  --destructive: oklch(0.55 0.20 25);
+  --destructive-foreground: oklch(0.98 0.01 300);
+  --border: oklch(0.48 0.12 300 / 20%);
+  --input: oklch(0.48 0.12 300 / 15%);
+  --ring: oklch(0.48 0.12 300);
+
+  --gradient-hero: linear-gradient(180deg, transparent 0%, oklch(0.28 0.04 300 / 0.35) 55%, oklch(0.28 0.04 300 / 0.85) 100%);
+  --gradient-lavender: linear-gradient(135deg, oklch(0.72 0.10 300), oklch(0.48 0.12 300));
+  --shadow-editorial: 0 30px 80px -20px oklch(0.30 0.10 300 / 0.25);
+  --shadow-glow: 0 0 60px -10px oklch(0.48 0.12 300 / 0.35);
+}
+
+.dark { color-scheme: dark; }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+}
+@utility text-italic-serif {
+  font-family: var(--font-serif-italic);
+  font-style: italic;
+  font-weight: 400;
+}
+@utility text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+@utility lavender-text {
+  background: var(--gradient-lavender);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(0.48 0.12 300 / 0.5), transparent);
+}
