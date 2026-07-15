@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import heroCouple from "@/assets/hero-couple.jpg";
 import lavenderSprig from "@/assets/lavender-sprig.jpg";
 import lavenderTexture from "@/assets/lavender-texture.jpg";
+import qrCode from "@/assets/qrcode.jpg";
 import { submitRsvp } from "@/lib/supabase";
 
 export const Route = createFileRoute("/")({
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/")({
 /* -------- Editable content (troque aqui as fotos e o PIX) -------- */
 const HERO_IMAGE = heroCouple; // troque por outra importação para mudar a foto de fundo
 const PIX_KEY = "85 99149-5878"; // substituir pela chave PIX real
-const QR_CODE_URL = ""; // cole aqui a URL da imagem do QR Code quando disponível
+const QR_CODE_URL = qrCode;
 /* ---------------------------------------------------------------- */
 
 function Monogram({ className = "" }: { className?: string }) {
